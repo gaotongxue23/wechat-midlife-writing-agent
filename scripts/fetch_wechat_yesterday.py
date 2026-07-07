@@ -58,12 +58,12 @@ def normalize_wechat_summary(date_text: str, raw: dict) -> dict:
                 "url": "",
                 "published_at": f"{date_text}T00:00:00+08:00",
                 "views": item.get("int_page_read_user", 0),
-                "likes": item.get("add_to_fav_user", 0),
+                "likes": 0,
                 "shares": item.get("share_user", 0),
                 "favorites": item.get("add_to_fav_user", 0),
                 "comments": 0,
                 "new_followers": 0,
-                "notes": "Fetched from WeChat datacube/getarticlesummary.",
+                "notes": "Fetched from WeChat datacube/getarticlesummary. Likes and comments are not included in this endpoint.",
                 "raw": item,
             }
         )
@@ -110,4 +110,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
