@@ -3,4 +3,5 @@
 node_modules/
 dist/
 tmp/
-
+data/daily_metrics/*.json
+!data/daily_metrics/example.json
