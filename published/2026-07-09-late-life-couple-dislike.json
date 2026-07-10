@@ -1,0 +1,28 @@
+{
+  "title": "夫妻到了晚年，最怕的不是吵架，而是互相嫌弃",
+  "draft_path": "drafts/2026-07-09-late-life-couple-dislike.md",
+  "cover_path": "assets/covers/late-life-couple-dislike.png",
+  "published_date": "2026-07-09",
+  "published_at": null,
+  "observed_date": "2026-07-10",
+  "metrics": {
+    "views": 162,
+    "average_read_duration_minutes": 1.73,
+    "completion_rate": 0.22,
+    "new_followers": 0,
+    "listen_users": 3,
+    "shares": 1,
+    "recommendations": 0,
+    "likes": 0,
+    "reward_amount": 0,
+    "comments": 0,
+    "favorites": 1,
+    "current_followers": 4
+  },
+  "derived_metrics": {
+    "interaction_rate": 0.0123,
+    "follow_conversion_rate": 0
+  },
+  "source": "wechat_backend_screenshot",
+  "notes": "阅读比上一篇养老钱文章增加50%，说明晚年夫妻冲突题更能获得阅读；但完读率22%、新增关注0，主要问题从选题点击转向正文留存和关注转化。"
+}
