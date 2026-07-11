@@ -1,7 +1,9 @@
 .env
 .DS_Store
 node_modules/
+__pycache__/
 dist/
 tmp/
 data/daily_metrics/*.json
 !data/daily_metrics/example.json
+logs/*.log

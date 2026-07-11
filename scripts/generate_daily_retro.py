@@ -2,6 +2,7 @@ import argparse
 import datetime as dt
 import json
 from pathlib import Path
+from typing import Optional
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -33,6 +34,7 @@ def rate_article(article: dict) -> str:
 
 def render_retro(metrics: dict) -> str:
     date_text = metrics["date"]
+    account_metrics = metrics.get("account_metrics") or {}
     lines = [
         f"# Daily Retro: {date_text}",
         "",
@@ -42,6 +44,19 @@ def render_retro(metrics: dict) -> str:
         f"- articles: {len(metrics.get('articles', []))}",
         "",
     ]
+
+    if account_metrics:
+        lines.extend(
+            [
+                "## 账号增长",
+                "",
+                f"- 新增关注: {int(account_metrics.get('new_users') or 0)}",
+                f"- 取消关注: {int(account_metrics.get('cancel_users') or 0)}",
+                f"- 净增关注: {int(account_metrics.get('net_new_users') or 0)}",
+                f"- 备注: {account_metrics.get('notes', '')}",
+                "",
+            ]
+        )
 
     for index, article in enumerate(metrics.get("articles", []), start=1):
         views = int(article.get("views") or 0)
@@ -57,8 +72,10 @@ def render_retro(metrics: dict) -> str:
                 f"### {index}. {article.get('title', '未命名文章')}",
                 "",
                 f"- 阅读: {views}",
+                f"- 阅读次数: {int(article.get('page_reads') or 0)}",
                 f"- 点赞: {likes}",
                 f"- 转发: {shares}",
+                f"- 转发次数: {int(article.get('share_count') or 0)}",
                 f"- 收藏: {favorites}",
                 f"- 评论: {comments}",
                 f"- 转发率: {share_rate:.2%}" if views else "- 转发率: N/A",
@@ -97,6 +114,14 @@ def render_retro(metrics: dict) -> str:
     return "\n".join(lines)
 
 
+def generate_and_write(input_path: Path, output_path: Optional[Path] = None) -> Path:
+    metrics = json.loads(input_path.read_text(encoding="utf-8"))
+    RETRO_DIR.mkdir(parents=True, exist_ok=True)
+    destination = output_path or RETRO_DIR / f"{metrics['date']}.md"
+    destination.write_text(render_retro(metrics), encoding="utf-8")
+    return destination
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", default=yesterday_in_china(), help="YYYY-MM-DD")
@@ -109,10 +134,7 @@ def main() -> int:
     if not input_path.exists():
         raise FileNotFoundError(f"Missing metrics file: {input_path}")
 
-    metrics = json.loads(input_path.read_text(encoding="utf-8"))
-    RETRO_DIR.mkdir(parents=True, exist_ok=True)
-    output_path = RETRO_DIR / f"{args.date}.md"
-    output_path.write_text(render_retro(metrics), encoding="utf-8")
+    output_path = generate_and_write(input_path)
     print(f"Wrote {output_path}")
     return 0
 
