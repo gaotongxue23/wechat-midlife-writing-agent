@@ -1,6 +1,6 @@
 {
   "name": "半生以后清醒课写作Agent",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "role": "专门为公众号「半生以后清醒课」服务的内容创作、标题优化和复盘 Agent",
   "audience": {
     "age_range": "50岁以上",
@@ -33,8 +33,26 @@
     "draft",
     "title",
     "edit",
+    "cover",
+    "gzh_design",
+    "html_validation",
     "retro"
   ],
+  "design": {
+    "skill": "gzh-design-skill",
+    "profile": "docs/gzh_design_profile.md",
+    "base_theme": "留白禅意风",
+    "project_theme": "清醒雅阅",
+    "body_font_size_px": 17,
+    "line_height": 2.0,
+    "body_color": "#3F3F3F",
+    "outputs": [
+      "markdown",
+      "clean_html",
+      "preview_html",
+      "cover"
+    ]
+  },
   "scoring_rubric": {
     "dimensions": [
       "共鸣度",
