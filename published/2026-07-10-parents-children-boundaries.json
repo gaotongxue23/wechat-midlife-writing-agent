@@ -6,21 +6,27 @@
   "observed_date": "2026-07-11",
   "metrics": {
     "views": 106,
+    "readers": 102,
     "likes": 0,
     "shares": 2,
     "favorites": 0,
     "comments": 0,
-    "average_read_duration_minutes": null,
-    "completion_rate": null,
-    "new_followers": null
+    "average_read_duration_minutes": 1.43,
+    "completion_rate": 0.46,
+    "new_followers": 0,
+    "listen_users": 0,
+    "reward_amount": 0
   },
   "derived_metrics": {
-    "share_rate": 0.0189
+    "share_rate_by_views": 0.0189,
+    "share_rate_by_readers": 0.0196,
+    "follow_conversion_rate": 0,
+    "completion_rate_change_vs_previous": 0.24
   },
   "comparison_snapshot": {
     "late_life_couple_views": 164,
     "retirement_money_views": 109
   },
-  "source": "wechat_backend_screenshot",
-  "notes": "阅读与养老钱文章接近，低于晚年夫妻题；分享2次说明实用型三点结构有传播价值。截图缺少完成率和新增关注，不能判断留存与涨粉效果。"
+  "source": "wechat_backend_summary_and_content_analysis_screenshots",
+  "notes": "列表页显示106次阅读，内容分析页显示102位阅读者，按不同口径同时保留。完成率46%，比上一篇22%提高24个百分点，验证短稿与三点结构改善留存；新增关注仍为0，关注转化依然是主要问题。"
 }
