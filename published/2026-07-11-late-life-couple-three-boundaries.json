@@ -1,0 +1,27 @@
+{
+  "title": "夫妻到了晚年，再亲也要守住这3个分寸",
+  "draft_path": "drafts/2026-07-11-late-life-couple-three-boundaries.md",
+  "cover_path": "assets/covers/late-life-couple-three-boundaries.png",
+  "published_at": "2026-07-11T18:30:00+08:00",
+  "observed_date": "2026-07-12",
+  "metrics": {
+    "readers": 275,
+    "likes": 1,
+    "shares": 3,
+    "favorites": 1,
+    "comments": 0,
+    "average_read_duration_minutes": 1.52,
+    "completion_rate": 0.35,
+    "new_followers": 1,
+    "listen_users": 1,
+    "reward_amount": 0
+  },
+  "derived_metrics": {
+    "share_rate_by_readers": 0.0109,
+    "follow_conversion_rate": 0.0036,
+    "completion_rate_change_vs_previous": -0.11,
+    "reader_growth_vs_previous_late_life_couple_article": 0.697
+  },
+  "source": "wechat_backend_content_analysis_screenshot",
+  "notes": "这是账号首个明确记录到新增关注的样本。阅读人数275，较7月9日夫妻题的162显著提升；完成率35%，低于7月10日三点边界文章的46%，但仍高于账号此前22%的夫妻长文。标题、具体场景与固定定位的组合值得继续测试。"
+}
